@@ -10,7 +10,7 @@ export const Projects = () => {
         <StyledProjects>
             <Container>
                 <SectionTitle>Projects</SectionTitle>
-                <FlexWrapper wrap={"wrap"} justify={"space-between"}>
+                <FlexWrapper wrap={"wrap"} justify={"space-around"} gap={"40px"}>
                     <ProjectCard title={"Project 1"}/>
                     <ProjectCard title={"Project 2"}/>
                     <ProjectCard title={"Project 3"}/>

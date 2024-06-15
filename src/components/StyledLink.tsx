@@ -6,16 +6,18 @@ type StyledLinkPropsType = {
     name: string
     linkWidth?: string
     linkHeight?: string
+    isShouldDisappear?:boolean
 }
 
 type StyledLinkBoxPropsType = {
     boxWidth?: string
     boxHeight?: string
+    isShouldDisappear?:boolean
 }
 
 export const StyledLink = (props: StyledLinkPropsType) => {
     return (
-        <StyledLinkBox boxWidth={props.linkWidth || "240px"} boxHeight={props.linkHeight || "60px"}>
+        <StyledLinkBox boxWidth={props.linkWidth || "240px"} boxHeight={props.linkHeight || "60px"} isShouldDisappear={props.isShouldDisappear}>
             <Link>{props.name}</Link>
         </StyledLinkBox>
     );
@@ -33,4 +35,10 @@ const StyledLinkBox = styled.div<StyledLinkBoxPropsType>`
     border-radius: 83px;
     background: ${theme.colors.gradient};
     display: flex;
+
+    @media ${theme.media.desktop} {
+        display: ${props => props.isShouldDisappear ? 'none' : 'flex'};
+    }
+    
+    
 `

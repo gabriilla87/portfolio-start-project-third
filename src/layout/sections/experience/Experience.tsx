@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle";
 import {Container} from "../../../components/Container";
+import {theme} from "../../../styles/Theme";
 
 
 export const Experience = () => {
@@ -38,7 +39,9 @@ export const Experience = () => {
     );
 };
 
-const StyledExperience = styled.section``
+const StyledExperience = styled.section`
+    
+`
 
 const TimeSpot = styled.div`
     width: 25px;
@@ -69,7 +72,7 @@ const Text = styled.p`
 
 const YearsList = styled.div`
     position: relative;
-    //outline: 1px solid yellow;
+    outline: 1px solid yellow;
     
     ul{
         display: flex;
@@ -79,13 +82,46 @@ const YearsList = styled.div`
     &::after {
         top: 39px;
         content: "";
-        width: calc(100% - 260px);
+        width: 77%;
         height: 10px;
-        left: 120px;
+        left: 50%;
+        transform: translateX(-50%);
         position: absolute;
         border-radius: 83px;
-        background: linear-gradient(270deg, #13ADC7 0%, #6978D1 66.67%, #945DD6 100%);
+        background: ${theme.colors.gradient};
         z-index: 2;
+    }
+
+    @media ${theme.media.tablet} {
+        max-width: 456px;
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 60px;
+        
+        ${ExperienceItem} {
+            text-align: left;
+        }
+        
+        ${Text} {
+            text-align: left;
+        }
+        
+        ul {
+            flex-direction: column;
+        }
+        
+        ${TimeSpot} {
+            position: absolute;
+            transform: translateX(-40px) translateY(-30px);
+        }
+        
+        &::after {
+            width: 10px;
+            left: 33px;
+            top: 15px;
+            height: 77%;
+            background: ${theme.colors.verticalGradient}
+        }
     }
 `
 

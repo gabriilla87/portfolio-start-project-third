@@ -7,7 +7,7 @@ type TechnologiesItemPropsType = {
     percents?: string
 }
 
-type StyledPartOfLine = {
+type StyledPartOfLinePropsType = {
     percents?: string
 }
 
@@ -16,14 +16,16 @@ export const TechnologiesItem = (props: TechnologiesItemPropsType) => {
         <StyledTechnologiesItem>
             <TechnologiesName>{props.name || "Item"}</TechnologiesName>
             <TechnologyLine>
-                <PartOfLine percents={props.percents}/>
+                <PartOfLine percents={props.percents}>
+                    <MaskLine></MaskLine>
+                </PartOfLine>
             </TechnologyLine>
         </StyledTechnologiesItem>
     );
 };
 
 const StyledTechnologiesItem = styled.div`
-    width: 900px;
+    width: 100%;
 
     &:nth-child(n + 2) {
         margin-top: 25px;
@@ -43,9 +45,19 @@ const TechnologyLine = styled.div`
     border-radius: 83px;
 `
 
-const PartOfLine = styled.div<StyledPartOfLine>`
+const PartOfLine = styled.div<StyledPartOfLinePropsType>`
     width: ${props => props.percents || "10%"};
     height: 100%;
     background: ${theme.colors.gradient};
     border-radius: 83px;
+    //position: absolute;
+    //clip: rect(10px, 10px, 10px, 10px);
+    //clip-path: inset(0 0 100px 0)
+`
+
+const MaskLine = styled.div`
+    // width: ;
+    // height: 100%;
+    //position: absolute;
+    //clip: rect(10px, 10px, 10px, 10px);
 `

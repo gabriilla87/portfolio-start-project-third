@@ -16,7 +16,7 @@ export const Footer = () => {
                         <Text>Email:<br/>
                             xxx@xyz.com</Text>
                     </TextWrapper>
-                    <SocialIcons/>
+                    <SocialIcons isShouldDisappear={true}/>
                 </FlexWrapper>
             </Container>
         </StyledFooter>

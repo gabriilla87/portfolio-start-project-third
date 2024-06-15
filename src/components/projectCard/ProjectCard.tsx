@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CardPicture from "../../assets/projectImg.png"
 import {theme} from "../../styles/Theme";
 import {StyledLink} from "../StyledLink";
+import {font} from "../../styles/Common";
 
 type ProjectCardPropsType = {
     title?: string
@@ -20,7 +21,10 @@ export const ProjectCard = (props: ProjectCardPropsType) => {
 };
 
 const StyledProjectCard = styled.div`
-    width: 550px;
+    //max-width: 550px;
+    //width: 100%;
+    width: 370px;
+    flex-grow: 1;
     height: 670px;
     padding: 25px 25px 40px;
     border-radius: 50px 0;
@@ -29,23 +33,23 @@ const StyledProjectCard = styled.div`
     display: flex;
     flex-direction: column;
 
-    &:nth-child(n + 3) {
-        margin-top: 60px;
-    }
+    //&:nth-child(n + 3) {
+    //    margin-top: 60px;
+    //}
+    
 `
 
 const CardTitle = styled.h3`
+    ${font({weight: 600, lineHeight: "88.5%", Fmax: 30, Fmin: 24})}
     text-align: center;
     margin: 40px 0 67px;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 88.5%;
     text-transform: uppercase;
     position: relative;
+    display: inline-block;
     
     &::before {
         content: "";
-        width: 300px;
+        width: 60%;
         height: 4px;
         background: ${theme.colors.gradient};
         
@@ -64,7 +68,8 @@ const CardText = styled.p`
 `
 
 const StyledPicture = styled.img`
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     height: 280px;
     object-fit: cover  ;
     border-radius: 24px 8px 8px 8px;
