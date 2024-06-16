@@ -30,7 +30,7 @@ const StyledTechnologiesItem = styled.div`
         margin-top: 25px;
     }
 `
-
+//
 const TechnologiesName = styled.h3`
     margin-left: 25px;
     font-size: 24px;
