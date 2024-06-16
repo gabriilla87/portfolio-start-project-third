@@ -72,7 +72,7 @@ const Text = styled.p`
 
 const YearsList = styled.div`
     position: relative;
-    outline: 1px solid yellow;
+    //outline: 1px solid yellow;
     
     ul{
         display: flex;

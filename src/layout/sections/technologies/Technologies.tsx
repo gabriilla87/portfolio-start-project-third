@@ -37,7 +37,7 @@ const StyledTechnologies = styled.section`
 
 const TechItemsWrapper = styled.div`
     max-width: 900px;
-    outline: 1px solid yellow;
+    //outline: 1px solid yellow;
     width: 100%;
     margin: 0 auto;
     display: flex;

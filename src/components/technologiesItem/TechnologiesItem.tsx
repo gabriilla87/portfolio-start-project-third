@@ -16,10 +16,9 @@ export const TechnologiesItem = (props: TechnologiesItemPropsType) => {
         <StyledTechnologiesItem>
             <TechnologiesName>{props.name || "Item"}</TechnologiesName>
             <TechnologyLine>
-                <PartOfLine percents={props.percents}>
-                    <MaskLine></MaskLine>
-                </PartOfLine>
+                <PartOfLine percents={props.percents}/>
             </TechnologyLine>
+
         </StyledTechnologiesItem>
     );
 };
@@ -39,6 +38,7 @@ const TechnologiesName = styled.h3`
 `
 
 const TechnologyLine = styled.div`
+    max-width: 900px;
     width: 100%;
     height: 18px;
     background-color: #162950;
@@ -46,18 +46,10 @@ const TechnologyLine = styled.div`
 `
 
 const PartOfLine = styled.div<StyledPartOfLinePropsType>`
-    width: ${props => props.percents || "10%"};
-    height: 100%;
-    background: ${theme.colors.gradient};
+    height: 18px;
+    width: 100%;
     border-radius: 83px;
-    //position: absolute;
-    //clip: rect(10px, 10px, 10px, 10px);
-    //clip-path: inset(0 0 100px 0)
-`
+    background: ${theme.colors.gradient};
+    clip-path: inset(0 calc(100% - ${props => props.percents || "10%"}) 0 0 round 83px);
 
-const MaskLine = styled.div`
-    // width: ;
-    // height: 100%;
-    //position: absolute;
-    //clip: rect(10px, 10px, 10px, 10px);
 `
